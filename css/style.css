@@ -10,6 +10,14 @@ body {
   margin: 0;
 }
 
+.settings-container {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #2e2f44;
+  font-size: 2rem;
+}
+
 main {
   width: 600px;
   margin: 32px auto;
