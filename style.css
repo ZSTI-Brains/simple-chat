@@ -19,7 +19,6 @@ main {
 
 main .messages-container {
   max-height: 500px;
-  min-height: 266px;
   overflow: auto;
 }
 
