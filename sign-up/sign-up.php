@@ -11,9 +11,8 @@
         $query = "SELECT * FROM `users` WHERE `nickname` = '$nickname'";
 
         if ($result = $mysqli->query($query)) {
-            $is = $result->num_rows;
             $row = $result->fetch_assoc();
-            if($is > 0) {
+            if($result->num_rows > 0) {
                 if ($nickname == $row["nickname"])
                     echo "User exists.";
             }
