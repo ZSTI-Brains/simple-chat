@@ -2,14 +2,13 @@
     require_once("../php/db-connection.php");
 
 
-    if (isset($_POST["nickname"]) && isset($_POST["password"]) && isset($_POST["email"])) {
+    if (isset($_POST["nickname"]) && isset($_POST["password"])) {
         $mysqli = new mysqli($db_server, $db_user, $db_pass, $db_name);
 
         $nickname = $_POST["nickname"];
         $password = $_POST["password"];
-        $email = $_POST["email"];
 
-        $query = "SELECT * FROM `users` WHERE `nickname` = '$nickname' OR `email` = '$email'";
+        $query = "SELECT * FROM `users` WHERE `nickname` = '$nickname'";
 
         if ($result = $mysqli->query($query)) {
             $is = $result->num_rows;
@@ -17,11 +16,9 @@
             if($is > 0) {
                 if ($nickname == $row["nickname"])
                     echo "User exists.";
-                else if ($email == $row["email"])
-                    echo "Email exists.";
             }
             else {
-                $query = "INSERT INTO `users`(`id`,`nickname`, `password`, `email`) VALUES ('','$nickname','$password','$email')";
+                $query = "INSERT INTO `users`(`id`,`nickname`, `password`) VALUES ('','$nickname','$password')";
                 $mysqli->query($query);
                 echo "Account created successful!";
                 mkdir("../users/$nickname"); // ???
