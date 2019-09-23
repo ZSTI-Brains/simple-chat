@@ -1,21 +1,21 @@
 <?php
     require_once("../php/db-connection.php");
 
-    if (isset($_POST["nickname"])) {
-        $nickname = $_POST["nickname"];
+    if (isset($_POST["username"])) {
+        $username = $_POST["username"];
         $password = $_POST['password'];
+                    
         $mysqli = new mysqli($db_server, $db_user, $db_pass, $db_name);
 
-        $query = "SELECT * FROM `users` WHERE `nickname` = '$nickname' AND password = '$password'";
+        $query = "SELECT * FROM `users` WHERE `username` = '$username' AND password = '$password'";
 
         if ($result = $mysqli->query($query)) {
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
-                $_SESSION["nickname"] = $row["nickname"];
-                $_SESSION["password"] = $row["password"];
+                $_SESSION["username"] = $row["username"];
 
                 $result->free_result();
-                header("Location:../index.php");
+                header("Location:../index.html"); /// index.html OR index.php
             }
             else {
                 echo "Incorrect nickname or password, missing user!";

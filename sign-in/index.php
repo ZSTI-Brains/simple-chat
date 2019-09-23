@@ -15,10 +15,10 @@
         <h1>SIMPLE CHAT</h1>
         <form action="sign-in.php" method="post">
             <div class="row">
-                <input type="text" placeholder="Username">
+                <input type="text" placeholder="Username" name="username">
             </div>
             <div class="row">
-                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Password" name="password">
             </div>
             <div class="row submit">
                 <input type="submit" value="SIGN IN">
