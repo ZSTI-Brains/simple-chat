@@ -10,7 +10,9 @@ body {
   margin: 0;
 }
 
-.settings-container {
+/* * * * * * * * * * * * MAIN * * * * * * * * * * * */
+
+#main > .settings-container {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -18,18 +20,18 @@ body {
   font-size: 2rem;
 }
 
-main {
+#main > main {
   width: 600px;
   margin: 32px auto;
   border: 1px solid #dddddd;
 }
 
-main .messages-container {
+#main > main .messages-container {
   height: 400px;
   overflow: auto;
 }
 
-main .message {
+#main > main .message {
   margin: 16px;
   padding: 12px;
   background: #2e2f44;
@@ -45,4 +47,82 @@ main .message {
   border: 0;
   border-top: 1px solid #dddddd;
   outline: none;
+}
+
+/* * * * * * * * * * * * SIGN IN * * * * * * * * * * * */
+
+#sign-in > main h1 {
+    font: 900 4.2rem Lato;
+    color: #2e2f44;
+    text-align: center;
+}
+
+#sign-in > main > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sign-in > main > form .row {
+    display: flex;
+    width: 500px;
+    padding: 8px;
+    justify-content: center;
+}
+
+#sign-in > main > form .row:nth-child(3) {
+    padding-top: 26px;
+}
+
+#sign-in > main > form input:not([type=submit]) {
+    width: 100%;
+    border: 1px solid #dddddd;
+    -webkit-transition: border-color .2s ease-out;
+    -moz-transition: border-color .2s ease-out;
+    -o-transition: border-color .2s ease-out;
+    transition: border-color .2s ease-out;
+}
+
+#sign-in > main > form input:not([type=submit]):focus {
+    border-color: #2e2f44;
+}
+
+#sign-in > main > form input[type=submit] {
+    width: 30%;
+    background: #d83f3f;
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: background-color .2s ease-out;
+    -moz-transition: background-color .2s ease-out;
+    -o-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+}
+
+#sign-in > main > form input[type=submit]:hover {
+    background-color: #f56767;
+}
+
+#sign-in > main > form input {
+    padding: 8px;
+    font-family: Lato;
+    border-radius: 8px;
+    outline: none;
+}
+
+#sign-in > main p {
+    margin: 0;
+    font: 1.2rem Lato;
+    color: #808080;
+}
+
+#sign-in > main a {
+    color: #181818;
+    text-decoration: none;
+}
+
+#sign-in > main a:hover {
+    text-decoration: underline;
 }
