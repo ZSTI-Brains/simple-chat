@@ -20,14 +20,13 @@
             <div class="row">
                 <input type="password" placeholder="Password">
             </div>
-            <div class="row">
+            <div class="row submit">
                 <input type="submit" value="SIGN IN">
             </div>
             <div class="row">
                 <p>Don't you have an account? <a href="../sign-up">Create it now.</a></p>
             </div>
         </form>
-
     </main>
   </body>
 </html>

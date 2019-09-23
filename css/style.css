@@ -51,6 +51,14 @@ body {
 
 /* * * * * * * * * * * * SIGN IN * * * * * * * * * * * */
 
+#sign-in > main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 400px;
+    justify-content: center;
+}
+
 #sign-in > main h1 {
     font: 900 4.2rem Lato;
     color: #2e2f44;
@@ -66,12 +74,13 @@ body {
 #sign-in > main > form .row {
     display: flex;
     width: 500px;
-    padding: 8px;
+    padding: 6px;
     justify-content: center;
 }
 
-#sign-in > main > form .row:nth-child(3) {
-    padding-top: 26px;
+#sign-in > main > form .row.submit {
+    padding-top: 24px;
+    padding-bottom: 16px;
 }
 
 #sign-in > main > form input:not([type=submit]) {
