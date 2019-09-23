@@ -8,7 +8,7 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
             
-        $query = "SELECT * FROM `users` WHERE `username` = '$nickname'";
+        $query = "SELECT * FROM `users` WHERE `username` = '$username'";
 
         if ($result = $mysqli->query($query)) {
             $row = $result->fetch_assoc();

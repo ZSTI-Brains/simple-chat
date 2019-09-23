@@ -31,5 +31,6 @@
             </div>
         </form>
     </main>
+    <script src="../js/check-password.js"></script>
   </body>
 </html>
