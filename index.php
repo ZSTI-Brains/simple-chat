@@ -17,11 +17,10 @@
     </div>
     <main>
       <div class="messages-container">
-        <div class="message">Hello, guys! What's up?</div>
-        <div class="message">You're great, man!</div>
+<!--        <div class="message">Hello, guys! What's up?</div>-->
       </div>
       <input id="message-input" type="text" placeholder="Type your message here...">
     </main>
-    <!-- <script src="js/chat.js"></script> -->
+     <script src="js/chat.js"></script> 
   </body>
 </html>

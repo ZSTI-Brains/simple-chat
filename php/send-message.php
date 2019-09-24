@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once("db-connection.php");
 
     if (isset($_POST["message"])) {
@@ -7,7 +8,7 @@
 
         $mysqli = new mysqli($db_server, $db_user, $db_pass, $db_name);
 
-        $query = "INSERT INTO chat_messages VALUES ('', 2, 1, '$message', '$date')";
+        $query = "INSERT INTO chat_messages VALUES ('', 1, '$message', '$date')";
         $result = $mysqli->query($query);
 
         $mysqli->close();

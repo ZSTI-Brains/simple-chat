@@ -1,5 +1,5 @@
-var chatMessagesContainer = document.querySelector("#messages-container");
-var inputContainer = document.querySelector("#message-container");
+var chatMessagesContainer = document.querySelector(".messages-container");
+var inputContainer = document.querySelector("#message-input");
 inputContainer.addEventListener("keydown", function(event) {
     if(event.key === "Enter") {
         sendMessage();
@@ -20,23 +20,23 @@ function getMessage() {
     .done(function(response) {
         if (response !== "") {
             let m = JSON.parse(response);
-
+            
             for (let i = 0; i < m.length; i++)
                 messages.push(m[i]);
 
             for (let i = 0; i < m.length; i++) {
                 let mess = document.createElement("div");
                 let pMessage = document.createElement("p");
-                let pNickname = document.createElement("p");
+                //let pNickname = document.createElement("p");
 
                 pMessage.innerText = m[i].message;
-                pNickname.innerText = m[i].nickname;
+                //pNickname.innerText = m[i].username;
 
-                mess.classList.add("chat-message");
-                pNickname.classList.add("nickname");
+                mess.classList.add("message");
+                //pNickname.classList.add("username");
 
                 mess.append(pMessage);
-                mess.append(pNickname);
+                //mess.append(pNickname);
 
                 chatMessagesContainer.appendChild(mess);
             }
@@ -61,4 +61,4 @@ function sendMessage() {
 }
 
 getMessage();
-setInterval(getMessage, 1000);
+setInterval(getMessage, 500);

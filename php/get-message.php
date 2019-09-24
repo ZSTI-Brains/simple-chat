@@ -5,7 +5,7 @@
         $id = $_POST["messageId"];
         $mysqli = new mysqli($db_server, $db_user, $db_pass, $db_name);
 
-        $query = "SELECT chat_messages.id, chat_messages.message, users.nickname FROM chat_messages
+        $query = "SELECT chat_messages.id, chat_messages.message, users.username FROM chat_messages
                   INNER JOIN users ON chat_messages.user_id = users.id WHERE chat_messages.id > $id
                   ORDER BY chat_messages.id";
 
