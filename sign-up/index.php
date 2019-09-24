@@ -13,7 +13,7 @@
   <body id="sign-in">
     <main>
         <h1>SIMPLE CHAT</h1>
-        <form action="sign-up.php" method="post">
+        <form action="sign-up.php" method="post" onsubmit="return validateForm()">
             <div class="row">
                 <input type="text" placeholder="Username" name="username">
             </div>
@@ -24,13 +24,16 @@
                 <input type="password" placeholder="Confirm password">
             </div>
             <div class="row submit">
-                <input type="submit" value="SIGN IN">
+                <input type="submit" value="SIGN UP">
             </div>
             <div class="row">
                 <p>Do you already have an account? <a href="../sign-in">Sign in now.</a></p>
             </div>
         </form>
     </main>
-    <script src="../js/check-password.js"></script>
+    <script>
+        var pass = document.querySelectorAll("input[type=password]");
+        function validateForm() { return pass[0].value == pass[1].value; }
+    </script>
   </body>
 </html>

@@ -1,3 +1,4 @@
+<?php session_start(); if (empty($_SESSION)) header("Location: sign-in"); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
