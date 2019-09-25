@@ -2,9 +2,8 @@
     session_start();
     require_once("db-connection.php");
 
-    if (isset($_POST["newMessage"])) {
+    if (isset($_POST["newUsername"])) {
         $username = $_SESSION["username"];
-        $username = "thethx";
         
         $mysqli = new mysqli($db_server, $db_user, $db_pass, $db_name);
         
@@ -15,7 +14,7 @@
             $id = $row["id"];
         }
 
-        $username = $_POST["newMessage"];
+        $username = $_POST["newUsername"];
             
         $query = "UPDATE users SET username = '$username' WHERE id = '$id'";
         $mysqli->query($query)
