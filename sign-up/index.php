@@ -1,4 +1,4 @@
-<?php session_start(); if (isset($_SESSION)) header("Location: .."); ?>
+<?php session_start(); if (!empty($_SESSION)) header("Location: .."); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
