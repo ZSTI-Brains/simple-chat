@@ -1,5 +1,7 @@
 var chatMessagesContainer = document.querySelector(".messages-container");
 var inputContainer = document.querySelector("#message-input");
+var usernameInput = document.querySelector("#username-input");
+
 inputContainer.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         sendMessage();
@@ -27,17 +29,16 @@ function getMessage() {
             for (let i = 0; i < m.length; i++) {
                 let mess = document.createElement("div");
                 let pMessage = document.createElement("p");
-                //let pNickname = document.createElement("p");
-
+                
                 pMessage.innerText = m[i].message;
-                //pNickname.innerText = m[i].username;
-
-                mess.classList.add("message");
-                //pNickname.classList.add("username");
-
+                
+                if(usernameInput.value == m[i].username){
+                    mess.classList.add("user");
+                }
+                else {
+                    mess.classList.add("message");
+                }
                 mess.append(pMessage);
-                //mess.append(pNickname);
-
                 chatMessagesContainer.appendChild(mess);
             }
         }
