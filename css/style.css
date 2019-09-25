@@ -11,42 +11,118 @@ body {
 }
 
 /* * * * * * * * * * * * MAIN * * * * * * * * * * * */
+#main button {
+    background: none;
+    color: #2e2f44;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+#main button:hover {
+    color: #4e4f63;
+}
+
+#main > .settings-button {
+
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: #2e2f44;
+    font-size: 2rem;
+}
 
 #main > .settings-container {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  color: #2e2f44;
-  font-size: 2rem;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .8);
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#main > .settings-container.hidden {
+    display: none;
+}
+
+#main > .settings-container .inner-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 200px;
+    padding: 16px;
+    background: white;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 8px;
+}
+
+#main > .settings-container .inner-container button {
+    font-size: 2.2rem;
+    position: absolute;
+    top: 8px;
+}
+
+#main #logout-button {
+    right: 32px;
+}
+
+#main #settings-close-button {
+    right: 8px;
+}
+
+#main > .settings-container > div > div {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#main > .settings-container > div > div > img {
+    width: 100%;
+}
+
+#main > .settings-container .inner-container input {
+    width: 80%;
+    margin-top: 20px;
+    padding: 6px;
+    font: 1.6rem Lato;
+    border: 1px solid #cccccc;
+    text-align: center;
+    outline: none;
 }
 
 #main > main {
-  width: 600px;
-  margin: 32px auto;
-  border: 1px solid #dddddd;
+    width: 600px;
+    margin: 32px auto;
+    border: 1px solid #dddddd;
 }
 
 #main > main .messages-container {
-  height: 400px;
-  overflow: auto;
+    height: 400px;
+    overflow: auto;
 }
 
 #main > main .message {
-  margin: 16px;
-  padding: 12px;
-  background: #2e2f44;
-  color: white;
-  font: 1.6rem Lato;
-  border-radius: 8px;
+    margin: 16px;
+    padding: 12px;
+    background: #2e2f44;
+    color: white;
+    font: 1.6rem Lato;
+    border-radius: 8px;
 }
 
 #message-input {
-  width: 100%;
-  padding: 8px;
-  font: 1.4rem Lato;
-  border: 0;
-  border-top: 1px solid #dddddd;
-  outline: none;
+    width: 100%;
+    padding: 8px;
+    font: 1.4rem Lato;
+    border: 0;
+    border-top: 1px solid #dddddd;
+    outline: none;
 }
 
 /* * * * * * * * * * * * SIGN IN * * * * * * * * * * * */

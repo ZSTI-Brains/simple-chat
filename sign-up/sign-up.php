@@ -7,7 +7,7 @@
 
         $username = $_POST["username"];
         $password = $_POST["password"];
-            
+
         $query = "SELECT * FROM `users` WHERE `username` = '$username'";
 
         if ($result = $mysqli->query($query)) {
@@ -21,7 +21,7 @@
                 $mysqli->query($query);
                 echo "Account created successful!";
                 header("Location:../sign-in/");
-                mkdir("../users/$username"); // ???
+                mkdir("../user/$username"); // ???
             }
         }
         $mysqli->close();
