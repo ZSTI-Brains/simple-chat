@@ -2,7 +2,7 @@
     session_start();
     require_once("db-connection.php");
 
-    if (isset($_POST["newUsername"])) {
+    if (isset($_POST["newUsername"]) && !empty($_SESSION["username"])) {
         $username = $_SESSION["username"];
         
         $mysqli = new mysqli($db_server, $db_user, $db_pass, $db_name);
