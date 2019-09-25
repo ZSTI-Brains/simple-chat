@@ -1,7 +1,7 @@
 var chatMessagesContainer = document.querySelector(".messages-container");
 var inputContainer = document.querySelector("#message-input");
 inputContainer.addEventListener("keydown", function(event) {
-    if(event.key === "Enter") {
+    if (event.key === "Enter") {
         sendMessage();
     }
 });
@@ -20,7 +20,7 @@ function getMessage() {
     .done(function(response) {
         if (response !== "") {
             let m = JSON.parse(response);
-            
+
             for (let i = 0; i < m.length; i++)
                 messages.push(m[i]);
 

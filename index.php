@@ -26,7 +26,7 @@
                 <div class="avatar-container">
                     <img src="assets/default-avatar.png">
                 </div>
-                <input type="text" value="Szary">
+                <input id="username-input" type="text" value="<?php echo $_SESSION["username"]; ?>">
             </div>
         </div>
         <main>
@@ -43,6 +43,21 @@
 
             document.getElementById('settings-close-button').addEventListener('click', (e) => {
                 document.getElementById('settings-container').classList.add('hidden');
+            });
+
+            document.getElementById('username-input').addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    let un = document.getElementById('username-input').value;
+
+                    if (un.length >= 3) {
+                        $.ajax({
+                            type: 'post',
+                            data: { username: un },
+                            url: 'php/change-username.php',
+                            success: (res) => { console.log(res); }
+                        });
+                    }
+                }
             });
         </script>
     </body>

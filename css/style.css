@@ -121,6 +121,10 @@ body {
     border-radius: 8px;
 }
 
+#main > main .message p {
+    margin: 0;
+}
+
 #message-input {
     width: 100%;
     padding: 8px;
