@@ -45,7 +45,7 @@ function getMessage() {
 }
 
 function sendMessage() {
-    var text = document.querySelector("input[type=text]");
+    var text = document.querySelector("#message-input");
     var textValue = text.value;
 
     if(textValue !== "") {
