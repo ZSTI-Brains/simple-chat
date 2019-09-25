@@ -29,16 +29,21 @@ function getMessage() {
             for (let i = 0; i < m.length; i++) {
                 let mess = document.createElement("div");
                 let pMessage = document.createElement("p");
+                let pNickname = document.createElement("p");
                 
                 pMessage.innerText = m[i].message;
+                pNickname.innerText = m[i].username;
+                
+                mess.classList.add("message");
                 
                 if(usernameInput.value == m[i].username){
                     mess.classList.add("user");
+                    pNickname.innerText = "you";
                 }
-                else {
-                    mess.classList.add("message");
-                }
+                
                 mess.append(pMessage);
+                mess.append(pNickname);
+                
                 chatMessagesContainer.appendChild(mess);
             }
         }
