@@ -18,7 +18,7 @@
         <div id="settings-container" class="settings-container hidden">
             <div class="inner-container">
                 <button id="logout-button">
-                    <i class="fas fa-sign-out-alt"></i>
+                    <a href="php/logout.php"><i class="fas fa-sign-out-alt"></i></a>
                 </button>
                 <button id="settings-close-button">
                     <i class="fas fa-times"></i>
