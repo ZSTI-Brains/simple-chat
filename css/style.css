@@ -29,7 +29,6 @@ body {
 }
 
 #main > .settings-button {
-
     position: absolute;
     top: 8px;
     right: 8px;
@@ -41,6 +40,7 @@ body {
     display: flex;
     width: 100%;
     height: 100vh;
+    min-height: 500px;
     background: rgba(0, 0, 0, .8);
     align-items: center;
     justify-content: center;
@@ -121,8 +121,18 @@ body {
     border-radius: 8px;
 }
 
+#main > main .message.user {
+    background: #d83f3f;
+}
+
 #main > main .message p {
     margin: 0;
+}
+
+#main > main .message .username {
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-align: right;
 }
 
 #message-input {
