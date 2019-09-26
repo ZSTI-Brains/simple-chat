@@ -33,12 +33,12 @@ function getMessage() {
 
                 pMessage.innerText = m[i].message;
                 pNickname.innerText = m[i].username;
+                pNickname.classList.add("username");
 
                 mess.classList.add("message");
 
                 if(usernameInput.value == m[i].username){
                     mess.classList.add("user");
-                    pNickname.classList.add("username");
                     pNickname.innerText = "you";
                 }
 

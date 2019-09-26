@@ -9,21 +9,19 @@
         $password = $_POST["password"];
 
         $query = "SELECT * FROM `users` WHERE `username` = '$username'";
+        $mysqli->query($query);
 
-        if ($result = $mysqli->query($query)) {
-            $row = $result->fetch_assoc();
-            if($result->num_rows > 0) {
-                if ($username == $row["username"])
-                    echo "User exists.";
-            }
-            else {
-                $query = "INSERT INTO `users`(`id`,`username`, `password`) VALUES ('','$username','$password')";
-                $mysqli->query($query);
-                echo "Account created successful!";
-                header("Location:../sign-in/");
-                mkdir("../user/$username"); // ???
-            }
+        if ($result->num_rows > 0) {
+            echo "User exists.";
         }
+        else {
+            $query = "INSERT INTO `users`(`id`,`username`, `password`) VALUES ('','$username','$password')";
+            $mysqli->query($query);
+            echo "Account created successful!";
+            header("Location:../sign-in/");
+            mkdir("../user/$username");
+        }
+
         $mysqli->close();
     }
 ?>
