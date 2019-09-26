@@ -47,6 +47,8 @@ function getMessage() {
 
                 chatMessagesContainer.appendChild(mess);
             }
+            
+            chatMessagesContainer.scrollTo(0, chatMessagesContainer.scrollHeight + 100);
         }
     });
 }
